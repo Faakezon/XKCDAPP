@@ -6,17 +6,22 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import {MaterialModule} from '@angular/material';
 import {ToolbarComponent} from './Toolbar/toolbar.component';
+import { MyButtonComponent } from './Button/button.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    MyButtonComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule,
+    MaterialModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent]

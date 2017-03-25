@@ -1,5 +1,5 @@
+import { MyButtonComponent } from './../Button/button.component';
 import {Component} from '@angular/core';
-import { MdButton } from '@angular/material';
 
 @Component({
   selector: 'toolbar-component',
@@ -8,4 +8,7 @@ import { MdButton } from '@angular/material';
 })
 export class ToolbarComponent {
   title = 'XKCD COMIC NAME';
+
+
+
 }

@@ -1,17 +1,22 @@
-.example-icon {
-  padding: 0 14px;
-}
-
-.example-spacer {
-  flex: 1 1 auto;
+.md-icon-button {
+  justify-content: space-between;
 }
 
 
-md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
-    background-color: rgb(0, 0, 255);
-    color: rgb(255,255,255);
+
+
+.leftSide {
+  flex: 1 0 0;
+  align-content: left;
 }
 
-.CenteredText {
-  flex: 0.5 0 auto;
+.middle {
+  flex: 2 0 0;
+  align-content: center;
 }
+
+.rightSide {
+  flex: 1 0 0 auto;
+  align-content: right;
+}
+
