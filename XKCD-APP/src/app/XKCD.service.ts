@@ -41,6 +41,7 @@ export class XKCDService {
 
 private extractData(res: Response) {
   let body = res.json();
+  console.log('What is in the data ', body);
   return body || { };
 }
 

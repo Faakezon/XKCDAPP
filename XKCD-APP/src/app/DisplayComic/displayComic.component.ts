@@ -4,7 +4,9 @@ import { XKCDService } from '../XKCD.service';
 
 @Component({
   selector: 'app-displayComic-component',
-  templateUrl: './displayComic.component.html'
+  templateUrl: './displayComic.component.html',
+  styleUrls: ['./displayComic.component.css']
+
 
 })
 
@@ -21,7 +23,6 @@ export class DisplayComicComponent implements OnInit {
 
   getComic() {
       this.xkcdService.getComic().then((data) => {
-        console.log('What is in the data ', data);
       this.myjsondata = data;
       this.img = data.img;
     });

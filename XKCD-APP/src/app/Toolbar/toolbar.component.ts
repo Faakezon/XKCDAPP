@@ -19,7 +19,6 @@ export class ToolbarComponent {
 
   getComic() {
       this.xkcdService.getComic().then((data) => {
-        console.log('What is in the data ', data);
       this.myjsondata = data;
       this.title = data.title;
     });
