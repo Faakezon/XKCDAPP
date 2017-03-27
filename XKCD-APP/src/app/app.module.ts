@@ -1,3 +1,4 @@
+import { DisplayComicComponent } from './DisplayComic/displayComic.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -14,18 +15,19 @@ import { XKCDService } from './XKCD.service';
   declarations: [
     AppComponent,
     ToolbarComponent,
-    MyButtonComponent
+    MyButtonComponent,
+    DisplayComicComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterialModule.forRoot(),
-    JsonpModule
+    JsonpModule,
 
 
   ],
   providers: [ XKCDService ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

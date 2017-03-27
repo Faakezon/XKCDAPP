@@ -1,6 +1,5 @@
 import { MyButtonComponent } from './../Button/button.component';
-import {Component} from '@angular/core';
-import { XKCDService } from '../XKCD.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-toolbar-component',
@@ -9,12 +8,5 @@ import { XKCDService } from '../XKCD.service';
 })
 export class ToolbarComponent {
   title = 'XKCD COMIC NAME';
-
-  constructor(private xkcdService: XKCDService) {}
-  ngOnInit(): void {
-    this.xkcdService.getComic();
-  }
-
-
 
 }

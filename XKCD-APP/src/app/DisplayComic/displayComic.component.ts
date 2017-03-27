@@ -1,22 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { XkcdComic } from '../xkcdComic';
 import { XKCDService } from '../XKCD.service';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
 
 @Component({
-  selector: 'displayComicComponent',
-  template: './displayComic.component.html',
+  selector: 'app-displayComic-component',
+  template: './displayComic.component.html'
 
 })
 
 
-export class DisplayComicComponent {
+export class DisplayComicComponent implements OnInit {
+  comic: {};
 
-    constructor(private xkcdService: XKCDService) {}
+  constructor (private xkcdService: XKCDService) {}
 
-  ngOnInit(): void {
-    this.xkcdService.getComic();
+  ngOnInit() { this.getComic(); }
+
+
+  /*getComic() {
+      this.xkcdService.getData().subscribe((data) => {
+        console.log('What is in the data ', data);
+      this.myjsondata = data;
+      });
+  }*/
+
+
+  getComic() {
+    this.xkcdService.getComic().then(comic => this.comic = comic);
   }
+
 }
+
