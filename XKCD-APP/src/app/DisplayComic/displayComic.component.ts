@@ -4,30 +4,31 @@ import { XKCDService } from '../XKCD.service';
 
 @Component({
   selector: 'app-displayComic-component',
-  template: './displayComic.component.html'
+  templateUrl: './displayComic.component.html'
 
 })
 
 
 export class DisplayComicComponent implements OnInit {
-  comic: {};
+  myjsondata: {};
+  title = '';
+  img = '';
 
   constructor (private xkcdService: XKCDService) {}
 
   ngOnInit() { this.getComic(); }
 
 
-  /*getComic() {
-      this.xkcdService.getData().subscribe((data) => {
+  getComic() {
+      this.xkcdService.getComic().then((data) => {
         console.log('What is in the data ', data);
       this.myjsondata = data;
-      });
-  }*/
-
-
-  getComic() {
-    this.xkcdService.getComic().then(comic => this.comic = comic);
+      this.img = data.img;
+    });
   }
+
+
+Z
 
 }
 
