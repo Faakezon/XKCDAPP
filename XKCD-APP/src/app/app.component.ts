@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { ToolbarComponent } from './Toolbar/toolbar.component';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
