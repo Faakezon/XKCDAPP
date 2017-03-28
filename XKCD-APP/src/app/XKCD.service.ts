@@ -6,33 +6,14 @@ import {Http, Response} from '@angular/http';
 import 'rxjs/Rx';
 
 @Injectable()
-
-/*
-export class XKCDService {
-    private comicUrl2 = 'https://xkcd.com/json.html';
-    private comicUrl = 'http://crossorigin.me/http://xkcd.com/info.0.json';  // URL to web API
-    private headers = new Headers({'Content-Type': 'application/json'});
-    constructor(public http: Http) {}
-
-getData() {
-    console.log('Getting Data');
-    return this.http.get(this.comicUrl2)
-        .map((res: Response) => res.json().headers);
-  }
-
-}
-*/
-
-
 export class XKCDService {
   private comicUrl2 = 'http://xkcd.com/info.0.json';
   private comicUrl = 'http://crossorigin.me/http://xkcd.com/info.0.json';  // URL to web API
   constructor (private http: Http) {}
 
 
-
   getComic (): Promise<XkcdComic> {
-  return this.http.get(this.comicUrl2)
+  return this.http.get(this.comicUrl)
                   .toPromise()
                   .then(this.extractData)
                   .catch(this.handleError);
