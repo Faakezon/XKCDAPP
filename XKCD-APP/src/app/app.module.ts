@@ -1,3 +1,4 @@
+import { LoaderService } from './Spinner/Spinner.service';
 import { DisplayComicComponent } from './DisplayComic/displayComic.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -10,6 +11,8 @@ import { MyButtonComponent } from './Button/button.component';
 import { HttpModule, JsonpModule } from '@angular/http';
 
 import { XKCDService } from './XKCD.service';
+import { NglModule } from 'ng-lightning/ng-lightning';
+
 
 @NgModule({
   declarations: [
@@ -18,16 +21,18 @@ import { XKCDService } from './XKCD.service';
     MyButtonComponent,
     DisplayComicComponent
   ],
+
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterialModule.forRoot(),
     JsonpModule,
+    NglModule
 
 
   ],
-  providers: [ XKCDService ],
+  providers: [ XKCDService, LoaderService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

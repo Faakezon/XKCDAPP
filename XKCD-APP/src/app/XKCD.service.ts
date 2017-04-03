@@ -7,7 +7,6 @@ import 'rxjs/Rx';
 
 @Injectable()
 export class XKCDService {
-  private comicUrl2 = 'http://xkcd.com/info.0.json';
   private comicUrl = 'http://crossorigin.me/http://xkcd.com/info.0.json';  // URL to web API
   constructor (private http: Http) {}
 
@@ -17,6 +16,11 @@ export class XKCDService {
                   .toPromise()
                   .then(this.extractData)
                   .catch(this.handleError);
+}
+
+getLatencyComic(): Promise<XkcdComic> {
+  return new Promise(resolve => {setTimeout(() => resolve(this.getComic()), 2000);
+  });
 }
 
 
