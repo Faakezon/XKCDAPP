@@ -8,7 +8,20 @@ import 'rxjs/Rx';
 @Injectable()
 export class XKCDService {
   private comicUrl = 'http://crossorigin.me/http://xkcd.com/info.0.json';  // URL to web API
+  private randomComicUrl = 'http://crossorigin.me/http://c.xkcd.com/random/comic/';
   constructor (private http: Http) {}
+
+  createRandomComicUrl(): string {
+    let url = 'http://crossorigin.me/' + 'http://xkcd.com/' + this.createRandomNumberForUrl() + '/info.0.json';
+    console.log(url);
+    return url;
+  }
+
+  createRandomNumberForUrl(): number {
+    let nr = Math.floor(Math.random() * (500 - 1 + 1) + 1);
+    console.log(nr);
+    return nr;
+  }
 
 
   getComic (): Promise<XkcdComic> {
@@ -22,6 +35,19 @@ getLatencyComic(): Promise<XkcdComic> {
   return new Promise(resolve => {setTimeout(() => resolve(this.getComic()), 2000);
   });
 }
+
+getRandomComic(): Promise<XkcdComic> {
+  return this.http.get(this.createRandomComicUrl())
+    .toPromise()
+    .then(this.extractData)
+    .catch(this.handleError);
+}
+
+getLatencyRandomComic(): Promise<XkcdComic> {
+  return new Promise(resolve => {setTimeout(() => resolve(this.getRandomComic()), 2000);
+  });
+}
+
 
 
 private extractData(res: Response) {

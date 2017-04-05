@@ -33,7 +33,7 @@ export class DisplayComicComponent implements OnInit {
 
 
   getComic() {
-      this.xkcdService.getLatencyComic().then((data) => {
+      this.xkcdService.getComic().then((data) => {
       this.myjsondata = data;
       this.img = data.img;
       this.loaderService.displayLoader(false);
@@ -41,7 +41,7 @@ export class DisplayComicComponent implements OnInit {
   }
 
 
-Z
+
 
 }
 

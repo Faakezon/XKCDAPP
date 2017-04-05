@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { MaterialModule } from '@angular/material';
+import { MaterialModule, MdButtonModule } from '@angular/material';
 import { ToolbarComponent } from './Toolbar/toolbar.component';
 import { MyButtonComponent } from './Button/button.component';
 import { HttpModule, JsonpModule } from '@angular/http';
@@ -28,7 +28,8 @@ import { NglModule } from 'ng-lightning/ng-lightning';
     HttpModule,
     MaterialModule.forRoot(),
     JsonpModule,
-    NglModule
+    NglModule,
+    MdButtonModule
 
 
   ],
