@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
   selector: 'app-toolbar-component',
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.css'],
+  providers: [XKCDService]
 })
 export class ToolbarComponent {
   title = '';

@@ -1,15 +1,21 @@
 import { Observable } from 'rxjs/Observable';
 import { XkcdComic } from './xkcdComic';
-import {Injectable} from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import {Http, Response} from '@angular/http';
 
 import 'rxjs/Rx';
 
 @Injectable()
-export class XKCDService {
+export class XKCDService implements OnInit{
   private comicUrl = 'http://crossorigin.me/http://xkcd.com/info.0.json';  // URL to web API
   private randomComicUrl = 'http://crossorigin.me/http://c.xkcd.com/random/comic/';
   constructor (private http: Http) {}
+
+  jsonData = {};
+
+ ngOnInit() {
+
+ }
 
   createRandomComicUrl(): string {
     let url = 'http://crossorigin.me/' + 'http://xkcd.com/' + this.createRandomNumberForUrl() + '/info.0.json';

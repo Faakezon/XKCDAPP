@@ -6,8 +6,8 @@ import { LoaderService } from './../Spinner/Spinner.service';
 @Component({
   selector: 'app-displayComic-component',
   templateUrl: './displayComic.component.html',
-  styleUrls: ['./displayComic.component.css']
-
+  styleUrls: ['./displayComic.component.css'],
+  providers: [XKCDService]
 
 })
 
