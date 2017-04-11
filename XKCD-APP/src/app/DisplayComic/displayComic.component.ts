@@ -1,37 +1,48 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { XkcdComic } from '../xkcdComic';
-import { XKCDService } from '../XKCD.service';
 import { LoaderService } from './../Spinner/Spinner.service';
+import { MyButtonComponent } from './../Button/button.component';
 
 @Component({
   selector: 'app-displayComic-component',
   templateUrl: './displayComic.component.html',
-  styleUrls: ['./displayComic.component.css'],
-  providers: [XKCDService]
-
+  styleUrls: ['./displayComic.component.css']
 })
 
 
 export class DisplayComicComponent implements OnInit {
-  myjsondata: {};
-  title = '';
-  img = '';
+
+  @Input('masterTitle') _title: string;
+  @Input('masterImg') _img: string;
+
+  @Output() randomComic = new EventEmitter<any>();
+
+
   objLoaderStatus: boolean;
 
-
-  constructor (private xkcdService: XKCDService, private loaderService: LoaderService) {
+  constructor (private loaderService: LoaderService) {
         this.objLoaderStatus = false;
     }
+
 
   ngOnInit() {
         this.loaderService.loaderStatus.subscribe((val: boolean) => {
             this.objLoaderStatus = val;
         });
         this.loaderService.displayLoader(true); // enable spinner
-        this.getComic();
+ }
+
+ public setSpinner(bool: boolean) {
+   this.loaderService.displayLoader(bool);
  }
 
 
+ getRandomComic() {
+    console.log('Random Comic');
+    this.randomComic.emit();
+  }
+
+/*
   getComic() {
       this.xkcdService.getComic().then((data) => {
       this.myjsondata = data;
@@ -40,8 +51,11 @@ export class DisplayComicComponent implements OnInit {
     });
   }
 
+  getJsonData() {
+    return this.myjsondata;
+  }
 
-
+*/
 
 }
 

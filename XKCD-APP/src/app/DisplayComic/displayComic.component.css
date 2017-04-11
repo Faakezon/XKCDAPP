@@ -4,3 +4,19 @@
   justify-content: center;
 }
 
+.aligner {
+    width:100%;
+    text-align:center;
+}
+.leftSide {
+    float:left;
+    width:10px;
+}
+.middle{
+  margin:0 auto;
+  width:100px;
+}
+.rightSide {
+    float:right;
+    width:50px;
+}

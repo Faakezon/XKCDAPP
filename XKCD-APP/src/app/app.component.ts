@@ -1,6 +1,5 @@
-import { ToolbarComponent } from './Toolbar/toolbar.component';
-import { DisplayComicComponent } from './DisplayComic/displayComic.component';
 import { Component, OnInit } from '@angular/core';
+import { MasterPageComponent } from './MasterPage/masterPage';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AppComponent {
+
 
 
 
